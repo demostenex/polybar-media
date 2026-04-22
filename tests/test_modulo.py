@@ -58,6 +58,10 @@ class TestFormatarModule:
     def test_paused_contem_icone_e_cor_cinza(self):
         saida = _formatar_module("Paused", "Musica", _make_carrossel("Musica"))
         assert ICONE_PAUSED in saida
+
+    def test_stopped_contem_icone_e_cor_cinza(self):
+        saida = _formatar_module("Stopped", "Musica", _make_carrossel("Musica"))
+        assert ICONE_PAUSED in saida
         assert COR_CINZA in saida
 
     def test_sem_midia_contem_icone_sem_midia(self):

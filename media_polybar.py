@@ -17,7 +17,7 @@ from carrossel import GerenciadorCarrossel
 
 ICONE_PLAYING  = "\U000f040a"  # 󰐊  verde
 ICONE_PAUSED   = "\U000f03e4"  # 󰏤  cinza
-ICONE_SEM_MIDIA = "\U000f075b" # 󰝛  cinza
+ICONE_SEM_MIDIA = "\U000f04c4" # 󰓄  cinza
 
 COR_VERDE = "#00cc44"
 COR_CINZA = "#888888"
@@ -34,7 +34,7 @@ def _formatar_module(status: str, titulo: str, carrossel: GerenciadorCarrossel) 
     """Formata a linha de saída para o Polybar."""
     if status == "Playing":
         icone, cor = ICONE_PLAYING, COR_VERDE
-    elif status == "Paused":
+    elif status in ("Paused", "Stopped"):
         icone, cor = ICONE_PAUSED, COR_CINZA
     else:
         return f"%{{F{COR_CINZA}}}{ICONE_SEM_MIDIA}%{{F-}} "
